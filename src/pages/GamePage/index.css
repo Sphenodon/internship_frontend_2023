@@ -1,0 +1,7 @@
+.gameCardInfo{
+    text-align: left;
+}
+.gameCard{
+    max-width: 600px;
+    min-width: 300px;
+}
