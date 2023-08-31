@@ -1,6 +1,6 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import {Button, Typography} from "antd";
+import {Button} from "antd";
 
 export default function Header () {
 
