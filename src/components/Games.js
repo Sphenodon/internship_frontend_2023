@@ -58,10 +58,8 @@ export default function Games() {
     )
 
     function loadMoreData(){
-        setLoadingMoreData(true);
         setMoreData([...moreData, ...games.slice(currentSliceOfArray, currentSliceOfArray+10)])
         setCurrentSliceOfArray(currentSliceOfArray+10)
-        setLoadingMoreData(false);
     }
 
     return (
