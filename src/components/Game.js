@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import axios from "axios";
 import {useParams} from "react-router-dom";
-import {Avatar, Card, Carousel, Descriptions, Divider, Image, Switch, Typography} from "antd";
+import {Avatar, Card, Carousel, Descriptions, Divider, Image, Typography} from "antd";
 import Meta from "antd/es/card/Meta";
 import {formatDate} from "../utils/formatDate";
 import {useQuery} from "react-query";
-import {ReactQueryDevtools} from "react-query/devtools";
 const { Paragraph } = Typography;
 export default function Game(){
     const { gameId } = useParams()

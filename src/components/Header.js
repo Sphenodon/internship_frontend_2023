@@ -1,7 +1,6 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 import {Button, Typography} from "antd";
-const { Paragraph } = Typography;
 
 export default function Header () {
 

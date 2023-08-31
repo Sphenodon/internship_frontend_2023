@@ -1,12 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import { useSelector } from 'react-redux';
-import {getCurrentPlatformState, getCurrentTagsState, getCurrentSortState, setGames} from '../features/games/gamesSlice';
+import {getCurrentPlatformState, getCurrentTagsState, getCurrentSortState} from '../features/games/gamesSlice';
 import {Link} from 'react-router-dom';
 import {Divider, Image, List, Skeleton, Typography} from 'antd';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import axios from 'axios';
 import {formatDate} from "../utils/formatDate";
-import {ReactQueryDevtools} from "react-query/devtools";
 import {useQuery} from "react-query";
 const { Paragraph } = Typography;
 
@@ -14,8 +13,6 @@ export default function Games() {
     const gamesPlatform = useSelector(getCurrentPlatformState);
     const gamesTags = useSelector(getCurrentTagsState);
     const gamesSort = useSelector(getCurrentSortState);
-
-    const [loadingMoreData, setLoadingMoreData] = useState(false);
 
     const [games, setGames] = useState([]);
     const [currentSliceOfArray, setCurrentSliceOfArray] = useState(0)
@@ -37,7 +34,7 @@ export default function Games() {
         }
     };
 
-    const {isLoading: loading, isLoadingError: loadingError, data: data} = useQuery(
+    const {isLoading: loading, isLoadingError: loadingError} = useQuery(
         ['query-games-by-filter', {gamesPlatform, gamesTags, gamesSort}],
         () => {
             return axios
